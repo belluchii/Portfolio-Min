@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Valentin Berger - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="index.js" defer></script>
+    <script src="canvas.js" defer></script>
+  </head>
+  <body>
+    <canvas id="canvas"></canvas>
+    <nav>
+      <ul>
+        <li class="out_scrolled">
+          <a href="#header"><span> Inicio </span> </a>
+        </li>
+        <li class="out_scrolled">
+          <a href="#about"><span> Acerca de mi </span> </a>
+        </li>
+        <li class="out_scrolled">
+          <a href="#projects"><span> Proyectos </span> </a>
+        </li>
+        <li class="out_scrolled">
+          <a href="#cv"><span> Experiencia </span> </a>
+        </li>
+        <li class="out_scrolled">
+          <a href="#contact">
+            <span> Contacto </span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <header>
+      <section class="header-section">
+        <h1 id="header">Hola, soy Valentín.</h1>
+        <p class="header-text">Soy Argentino, me</p>
+        <p class="header-text">apasiona programar y</p>
+        <p class="header-text">aprender.</p>
+      </section>
+    </header>
+    <main>
+      <h2 id="about" class="box-bg">Acerca de mí</h2>
+      <section class="about-section box-bg">
+        <p class="about-text">
+          Soy una persona creativa y comprometida, con capacidad para
+          involucrarme en proyectos que requieren dedicación, responsabilidad y
+          aprendizaje continuo. Tengo experiencia trabajando en equipo y una
+          fuerte orientación a la mejora constante y adquisición de nuevos
+          conocimientos.
+        </p>
+      </section>
+      <h2 id="projects" class="box-bg">Proyectos</h2>
+      <article class="card-cont">
+        <div class="card box-bg">
+          <h3 class="h3-close">
+            <span class="x-icon">x</span>
+          </h3>
+          <div class="card-focus-image"></div>
+          <div class="card-focus-text">
+            <h3>Plataforma de redes sociales</h3>
+            <div class="focus-tags"></div>
+            <div class="focus-links"></div>
+          </div>
+        </div>
+      </article>
+      <section class="projects-section">
+        <div class="first-col">
+          <article class="project-card">
+            <div class="card-image">
+              <div class="card-gradient"></div>
+              <div class="card-text">
+                <h3>Titulo de la card</h3>
+                <div class="tags">
+                  <p>tag 1</p>
+                  <p>tag 2</p>
+                </div>
+                <div class="links">
+                  <a href="#">Ver demo</a>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="project-card">
+            <div class="card-image">
+              <div class="card-gradient"></div>
+              <div class="card-text">
+                <h3>Titulo de la card</h3>
+                <div class="tags">
+                  <p>tag 1</p>
+                  <p>tag 2</p>
+                </div>
+                <div class="links">
+                  <a href="#">Ver demo</a><a href="#">Ver código</a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="second-col">
+          <article class="project-card">
+            <div class="card-image">
+              <div class="card-gradient"></div>
+              <div class="card-text">
+                <h3>Iitulo de la card</h3>
+                <div class="tags">
+                  <p>Mongodb</p>
+                  <p>Express</p>
+                </div>
+                <div class="links">
+                  <a href="#">Ver demo</a><a href="#">Ver código</a>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="project-card">
+            <div class="card-image">
+              <div class="card-gradient"></div>
+              <div class="card-text">
+                <h3>Titulo de la card</h3>
+                <div class="tags">
+                  <p>tag 1</p>
+                  <p>tag 2</p>
+                </div>
+                <div class="links">
+                  <a href="#">Ver demo</a><a href="#">Ver código</a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+      <h2 id="cv" class="box-bg">CV</h2>
+      <section class="cv-section box-bg">
+        <h3>Experienca Laboral</h3>
+        <article>
+          <p class="cv-time">06/2024 - Presente</p>
+          <div class="cv-info">
+            <h3>Ingeniero de Software (G2I Inc - Outlier)</h3>
+            <p>
+              Diseño soluciones de programación escalables y eficientes,
+              utilizando distintos lenguajes, frameworks y herramientas según
+              las necesidades de cada proyecto, y además diseño y valido
+              desafíos complejos para modelos de lenguaje de alto nivel, como
+              <b>ChatGPT, Claude y otros</b>, optimizando sus respuestas
+              mediante análisis riguroso y procesos de refinamiento continuo.
+            </p>
+          </div>
+        </article>
+        <article>
+          <p class="cv-time">06/2023 - 10/2023</p>
+          <div class="cv-info">
+            <h3>Practica Profesional (Plataforma 5)</h3>
+            <p>
+              Desarrollo de una aplicación web de packaging construida con
+              <b>Next.js</b> e integrada con servicios de <b>AWS</b>, diseñada
+              bajo un enfoque <b>mobile first</b> y desplegada en <b>Vercel</b>.
+              Se utilizo <b>docker</b> para facilitar una gestión eficiente de
+              entornos, mayor escalabilidad y facilidad en los procesos de
+              despliegue, manteniendo buenas prácticas de desarrollo y
+              optimización del rendimiento.
+            </p>
+          </div>
+        </article>
+        <article>
+          <p class="cv-time">05/2023 - 06/2023</p>
+          <div class="cv-info">
+            <h3>Practica Profesional (Ceibo Digital)</h3>
+            <p>
+              Desarrollo una aplicación móvil para la gestión de eventos
+              utilizando <b>MongoDB</b> y <b>React Native</b>, colaborando
+              activamente en equipos de trabajo bajo la metodología
+              <b>Scrum</b>, participando en la planificación, organización y
+              agilización del desarrollo del proyecto.
+            </p>
+          </div>
+        </article>
+        <h3>Camino Educativo</h3>
+        <article>
+          <p class="cv-time">03/2023 - 05/2023</p>
+          <div class="cv-info">
+            <h3>Plataforma 5 Bootcamp</h3>
+            <p>
+              Formación intensiva en <b>desarrollo web Full Stack</b> con
+              enfoque en <b>JavaScript</b>, completando más de 800 horas de
+              cursada en <b>modalidad intensiva</b> de 10 horas diarias, de
+              lunes a viernes. Durante el programa, además del aprendizaje
+              técnico, se trabajó fuertemente en el desarrollo de
+              <b>habilidades blandas</b> aplicadas al trabajo en equipo y a
+              entornos profesionales de programación.
+            </p>
+          </div>
+        </article>
+        <article>
+          <p class="cv-time">01/2022 - 12/2022</p>
+          <div class="cv-info">
+            <h3>Programador en Javascript (Centro profesional de azul)</h3>
+          </div>
+        </article>
+        <article>
+          <p class="cv-time">03/2016 - 11/2022</p>
+          <div class="cv-info">
+            <h3>Escuela Secundaria Mariano Moreno</h3>
+          </div>
+        </article>
+      </section>
+      <h2 id="contact" class="box-bg">Contactame a traves de mis redes</h2>
+      <section class="contact-section box-bg">
+        <p>
+          <a href="mailto:bellberger45@gmail.com">bellberger45@gmail.com</a>
+        </p>
+        <p>
+          <a href="https://www.linkedin.com/in/valentin-berger-dev/"
+            >linkedin.com/in/valentin-berger-dev/</a
+          >
+        </p>
+        <p>
+          <a href="https://github.com/belluchii">Github.com/belluchii</a>
+        </p>
+        <a href="mailto:bellberger45@gmail.com"
+          >O enviame un mail clickeando aqui</a
+        >
+      </section>
+    </main>
+    <footer>
+      <p>©2026 Valentín Berger. Derechos reservados</p>
+    </footer>
+  </body>
+</html>
