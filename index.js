@@ -105,14 +105,16 @@ function buildSwiper(slides) {
       div.appendChild(img);
     } else if (s.type === "video") {
       const video = document.createElement("video");
-      video.src = s.src;
-      video.autoplay = true;
       video.muted = true;
       video.loop = true;
       video.playsInline = true;
+      video.autoplay = true;
       video.style.cssText =
         "width:100%;height:100%;object-fit:contain;display:block;";
       div.appendChild(video);
+      video.src = s.src;
+      video.load();
+      video.play().catch(() => {});
     }
 
     swiperTrack.appendChild(div);

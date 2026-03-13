@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c77dff"/>
+      <stop offset="25%" stop-color="#ffb703"/>
+      <stop offset="50%" stop-color="#00e5d8"/>
+      <stop offset="75%" stop-color="#8cff00"/>
+      <stop offset="100%" stop-color="#ff6b6b"/>
+    </linearGradient>
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c77dff"/>
+      <stop offset="25%" stop-color="#ffb703"/>
+      <stop offset="50%" stop-color="#00e5d8"/>
+      <stop offset="75%" stop-color="#8cff00"/>
+      <stop offset="100%" stop-color="#ff6b6b"/>
+    </linearGradient>
+  </defs>
+  <rect x="1" y="1" width="98" height="98" rx="3" ry="3" fill="url(#borderGrad)"/>
+  <rect x="2.5" y="2.5" width="95" height="95" rx="2" ry="2" fill="#000"/>
+  <text x="50" y="68" text-anchor="middle" font-family="Inter, sans-serif" font-size="42" font-weight="700" fill="url(#textGrad)">VB</text>
+</svg>

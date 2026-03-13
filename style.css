@@ -71,22 +71,6 @@ nav {
   background-size: contain;
 }
 
-.home-ico {
-  background-image: url(./svg/house-solid-full.svg);
-}
-.user-ico {
-  background-image: url(./svg/user-solid-full.svg);
-}
-.project-ico {
-  background-image: url(./svg/gavel-solid-full.svg);
-}
-.exp-ico {
-  background-image: url(./svg/file-lines-solid-full.svg);
-}
-.contact-ico {
-  background-image: url(./svg/square-envelope-solid-full.svg);
-}
-
 .header-section {
   width: 100%;
   margin-top: 0;
