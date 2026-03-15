@@ -196,10 +196,10 @@ function focusWatcher() {
   } else if (window.scrollY < 800) {
     clearFocus();
     nav_li[1].classList.add("focus");
-  } else if (window.scrollY < 1900) {
+  } else if (window.scrollY < 2600) {
     clearFocus();
     nav_li[2].classList.add("focus");
-  } else if (window.scrollY < 2450) {
+  } else if (window.scrollY < 3500) {
     clearFocus();
     nav_li[3].classList.add("focus");
   } else {
