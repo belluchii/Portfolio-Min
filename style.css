@@ -138,6 +138,22 @@ h2 {
   opacity: 0;
 }
 
+/*-----------------------------about-me */
+
+.about-text {
+  color: var(--txt-med);
+  margin-top: 10px;
+}
+
+.about-text b {
+  color: var(--txt-full);
+  font-weight: 500;
+}
+
+.about-text:first-of-type {
+  margin-top: 0px;
+}
+
 /*---------------------------project section */
 
 /*----------- Popup con swiper */
