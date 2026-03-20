@@ -581,7 +581,7 @@ footer p {
   border: 1px solid var(--accent-6);
   color: var(--accent-6);
   padding: 6px 14px;
-  border-radius: 6px;
+  border-radius: 3px;
   cursor: pointer;
   font-family: Inter, sans-serif;
   font-size: 0.85rem;
@@ -604,6 +604,8 @@ footer p {
 .box-bg {
   border-radius: 3px;
   background: #101010dd;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   padding: 15px;
   box-shadow: 2px 2px 5px #000;
 }
@@ -643,6 +645,8 @@ li:nth-child(5) {
 
 .li_scrolled {
   border: 1px solid #0000;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   background: var(--bg-light);
   box-shadow: 2px 2px 5px #000;
 }
