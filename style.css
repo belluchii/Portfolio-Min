@@ -108,6 +108,7 @@ h2 {
 }
 
 li {
+  overflow-x: hidden;
   background: #0000;
   transition: 0.2s linear;
   border: 1px solid var(--item-color);
@@ -156,7 +157,7 @@ h2 {
 
 /*---------------------------project section */
 
-/*----------- Popup con swiper */
+/*----------- Popup with swiper */
 .card-cont {
   position: fixed;
   top: 0;
@@ -342,13 +343,18 @@ h2 {
 }
 
 .focus-tags p {
-  font-size: 0.78rem;
-  font-weight: 500;
-  color: #ffffff66;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #ffffffaa;
   display: inline-block;
-  margin-right: 10px;
+  margin-right: 6px;
+  margin-bottom: 4px;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  background: #ffffff0f;
+  border: 1px solid #ffffff1a;
+  padding: 2px 8px;
+  border-radius: 3px;
 }
 
 .focus-links a {
@@ -394,7 +400,7 @@ h2 {
   cursor: pointer;
 }
 
-/* Fondo en ::before — permite animar scale sin mover el contenedor */
+/* bg ::before*/
 .card-image::before {
   content: "";
   position: absolute;
@@ -406,7 +412,7 @@ h2 {
   z-index: 0;
 }
 
-/* Zoom al hacer hover */
+/* Zoom hover */
 .project-card:hover .card-image {
   box-shadow: 4px 6px 18px #000a;
 }
@@ -414,17 +420,17 @@ h2 {
   transform: scale(1.1);
 }
 
-/* ---- Imágenes de certificados ---- */
+/* ---- Cert IMG ---- */
 .cert-p5::before {
   background-image: url(img/CertificadoP5.webp);
 }
 
-/* Thumbnail para card de video */
+/* Thumbnail*/
 .card-video-thumb::before {
   background-image: var(--thumb);
 }
 
-/* ---- Certificado PBA con hover reverso ---- */
+/* ---- PBA HOVER---- */
 .cert-flip-front::before {
   background-image: url(img/Certificado-PBA-Front.jpg);
 }
@@ -453,7 +459,7 @@ h2 {
   transform: scale(1.1);
 }
 
-/* ---- Texto sobre cards ---- */
+/* ---- Card texts ---- */
 .card-gradient {
   width: 100%;
   height: 100%;
@@ -482,10 +488,18 @@ h2 {
 }
 
 .tags p {
-  font-size: 0.8rem;
-  font-weight: 500;
-  margin-right: 5px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  margin-right: 4px;
+  margin-bottom: 4px;
   display: inline-block;
+  background: #ffffff18;
+  border: 1px solid #ffffff30;
+  padding: 2px 8px;
+  border-radius: 3px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #ffffffcc;
 }
 
 .links {
@@ -554,6 +568,34 @@ footer {
 footer p {
   color: #000;
   font-weight: 500;
+}
+
+/*---------------------lang-btn */
+.lang-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1000;
+  background: var(--bg-light);
+  border: 1px solid var(--accent-6);
+  color: var(--accent-6);
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: Inter, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  box-shadow: 2px 2px 5px #000;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+.lang-btn:hover {
+  background: var(--accent-6);
+  color: #000;
 }
 
 /*----------------------box-shadow */

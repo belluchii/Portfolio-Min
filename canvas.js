@@ -44,7 +44,7 @@ function adjustParticleCount() {
     particlesForWidth: [40, 50, 70, 90, 110],
   };
 
-  let numParticles = 200;
+  let numParticles = 100;
 
   // Check the height and pick a suitable particle count
   for (let i = 0; i < particleConfig.heightConditions.length; i++) {

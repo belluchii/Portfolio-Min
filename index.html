@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -45,41 +45,45 @@
     <nav>
       <ul>
         <li class="out_scrolled">
-          <a href="#header"><span> Inicio </span></a>
+          <a href="#header"><span data-i18n="nav_inicio"> Inicio </span></a>
         </li>
         <li class="out_scrolled">
-          <a href="#about"><span> Acerca de mi </span></a>
+          <a href="#about"><span data-i18n="nav_about"> Acerca de mi </span></a>
         </li>
         <li class="out_scrolled">
-          <a href="#projects"><span> Proyectos </span></a>
+          <a href="#projects"
+            ><span data-i18n="nav_projects"> Proyectos </span></a
+          >
         </li>
         <li class="out_scrolled">
-          <a href="#cv"><span> Experiencia </span></a>
+          <a href="#cv"><span data-i18n="nav_cv"> Experiencia </span></a>
         </li>
         <li class="out_scrolled">
-          <a href="#contact"><span> Contacto </span></a>
+          <a href="#contact"><span data-i18n="nav_contact"> Contacto </span></a>
         </li>
       </ul>
     </nav>
     <header>
       <section class="header-section">
-        <h1 id="header">Hola, soy Valentín.</h1>
-        <p class="header-text">Desarrollador Full Stack</p>
-        <p class="header-text">remoto para equipos</p>
-        <p class="header-text">de todo el mundo.</p>
+        <h1 id="header" data-i18n="header_h1">Hola, soy Valentín.</h1>
+        <p class="header-text" data-i18n="header_p1">
+          Desarrollador Full Stack
+        </p>
+        <p class="header-text" data-i18n="header_p2">remoto para equipos</p>
+        <p class="header-text" data-i18n="header_p3">de todo el mundo.</p>
       </section>
     </header>
     <main>
-      <h2 id="about" class="box-bg">Acerca de mí</h2>
+      <h2 id="about" class="box-bg" data-i18n="about_title">Acerca de mí</h2>
       <section class="about-section box-bg">
-        <p class="about-text">
+        <p class="about-text" data-i18n="about_p1">
           Soy <b>Desarrollador Full Stack</b> con más de
           <b>2 años de experiencia</b>
           construyendo aplicaciones web end-to-end. Me importa escribir código
           claro, tomar buenas decisiones técnicas y trabajar bien en equipos
           distribuidos.
         </p>
-        <p class="about-text">
+        <p class="about-text" data-i18n="about_p2">
           Actualmente trabajo de forma <b>remota</b> para <b>G2I / Outlier</b>,
           evaluando y validando desafíos de programación, revisando
           implementaciones y analizando la calidad técnica de soluciones.
@@ -87,7 +91,7 @@
           <b>Claude</b>: detecto errores, justifico correcciones y refino
           outputs con criterio técnico real.
         </p>
-        <p class="about-text">
+        <p class="about-text" data-i18n="about_p3">
           Mi stack principal es <b>JavaScript / TypeScript</b> con
           <b>React</b> y <b>Next.js</b> en el frontend, y <b>Node.js</b> +
           <b>Express / Fastify</b> en el backend. Desarrollo <b>APIs REST</b>,
@@ -95,14 +99,16 @@
           <b>PostgreSQL</b>. Acompaño el desarrollo con <b>testing</b> (Jest /
           React Testing Library), <b>Docker</b> y <b>Git / GitHub</b>.
         </p>
-        <p class="about-text">
+        <p class="about-text" data-i18n="about_p4">
           Busco una posición <b>remota</b> en un equipo con buenas prácticas y
           problemas reales. Tengo <b>inglés profesional</b> y me interesa crecer
           en un entorno que exija tanto en lo técnico como en la comunicación.
         </p>
       </section>
 
-      <h2 id="projects" class="box-bg">Proyectos y certificaciones</h2>
+      <h2 id="projects" class="box-bg" data-i18n="projects_title">
+        Proyectos y certificaciones
+      </h2>
 
       <!-- Popup con swiper -->
       <article class="card-cont">
@@ -120,10 +126,15 @@
           </div>
         </div>
       </article>
+
       <section class="projects-section">
         <article
           class="project-card"
           data-video="https://res.cloudinary.com/dywltbptv/video/upload/v1773275423/teez_qwxji1.mp4"
+          data-i18n-title-es="Teez"
+          data-i18n-title-en="Teez"
+          data-i18n-tags-es="React.js,Express,MongoDB,Node.js"
+          data-i18n-tags-en="React.js,Express,MongoDB,Node.js"
         >
           <div
             class="card-image card-video-thumb"
@@ -160,6 +171,10 @@
         <article
           class="project-card"
           data-video="https://res.cloudinary.com/dywltbptv/video/upload/v1773272733/Index-search_fqooh1.mp4"
+          data-i18n-title-es="Amazon Indexed Search"
+          data-i18n-title-en="Amazon Indexed Search"
+          data-i18n-tags-es="MongoDB,Vue,Fastify,Node.JS"
+          data-i18n-tags-en="MongoDB,Vue,Fastify,Node.JS"
         >
           <div
             class="card-image card-video-thumb"
@@ -197,7 +212,14 @@
           </div>
         </article>
 
-        <article class="project-card" data-images="img/CertificadoP5.webp">
+        <article
+          class="project-card"
+          data-images="img/CertificadoP5.webp"
+          data-i18n-title-es="Plataforma 5"
+          data-i18n-title-en="Plataforma 5"
+          data-i18n-tags-es="Javascript,SQL,Git,Express,Node,JWT,React,Scrum"
+          data-i18n-tags-en="Javascript,SQL,Git,Express,Node,JWT,React,Scrum"
+        >
           <div class="card-image cert-p5">
             <div class="card-gradient"></div>
             <div class="card-text">
@@ -219,6 +241,10 @@
         <article
           class="project-card"
           data-images="img/Certificado-PBA-Front.jpg,img/CertificadoPBA-Back.jpg"
+          data-i18n-title-es="Programador C.F.P 401"
+          data-i18n-title-en="C.F.P 401 Developer"
+          data-i18n-tags-es="Base de datos,OOP,Tecnicas de programacion,Relaciones laborales y orientacion laboral"
+          data-i18n-tags-en="Databases,OOP,Programming techniques,Labor relations and career guidance"
         >
           <div class="card-image cert-flip-front">
             <div class="card-gradient"></div>
@@ -235,14 +261,18 @@
         </article>
       </section>
 
-      <h2 id="cv" class="box-bg">CV</h2>
+      <h2 id="cv" class="box-bg" data-i18n="cv_title">CV</h2>
       <section class="cv-section box-bg">
-        <h3>Experiencia Laboral</h3>
+        <h3 data-i18n="cv_exp">Experiencia Laboral</h3>
         <article>
-          <p class="cv-time">06/2024 - Presente</p>
+          <p class="cv-time">
+            06/2024 - <span data-i18n="cv_present">Presente</span>
+          </p>
           <div class="cv-info">
-            <h3>Ingeniero de Software (G2I Inc - Outlier)</h3>
-            <p>
+            <h3 data-i18n="cv_job1_title">
+              Ingeniero de Software (G2I Inc - Outlier)
+            </h3>
+            <p data-i18n="cv_job1_p">
               Diseño soluciones de programación escalables y eficientes,
               utilizando distintos lenguajes, frameworks y herramientas según
               las necesidades de cada proyecto, y además diseño y valido
@@ -255,8 +285,10 @@
         <article>
           <p class="cv-time">06/2023 - 10/2023</p>
           <div class="cv-info">
-            <h3>Practica Profesional (Plataforma 5)</h3>
-            <p>
+            <h3 data-i18n="cv_job2_title">
+              Practica Profesional (Plataforma 5)
+            </h3>
+            <p data-i18n="cv_job2_p">
               Desarrollo de una aplicación web de packaging construida con
               <b>Next.js</b> e integrada con servicios de <b>AWS</b>, diseñada
               bajo un enfoque <b>mobile first</b> y desplegada en <b>Vercel</b>.
@@ -270,8 +302,10 @@
         <article>
           <p class="cv-time">05/2023 - 06/2023</p>
           <div class="cv-info">
-            <h3>Practica Profesional (Ceibo Digital)</h3>
-            <p>
+            <h3 data-i18n="cv_job3_title">
+              Practica Profesional (Ceibo Digital)
+            </h3>
+            <p data-i18n="cv_job3_p">
               Desarrollé una aplicación móvil para la gestión de eventos
               utilizando <b>MongoDB</b> y <b>React Native</b>, colaborando
               activamente en equipos de trabajo bajo la metodología
@@ -280,12 +314,12 @@
             </p>
           </div>
         </article>
-        <h3>Camino Educativo</h3>
+        <h3 data-i18n="cv_edu">Camino Educativo</h3>
         <article>
           <p class="cv-time">03/2023 - 05/2023</p>
           <div class="cv-info">
-            <h3>Plataforma 5 Bootcamp</h3>
-            <p>
+            <h3 data-i18n="cv_edu1_title">Plataforma 5 Bootcamp</h3>
+            <p data-i18n="cv_edu1_p">
               Formación intensiva en <b>desarrollo web Full Stack</b> con
               enfoque en <b>JavaScript</b>, completando más de 800 horas de
               cursada en <b>modalidad intensiva</b> de 10 horas diarias, de
@@ -299,18 +333,22 @@
         <article>
           <p class="cv-time">01/2022 - 12/2022</p>
           <div class="cv-info">
-            <h3>Programador en Javascript (Centro profesional de azul)</h3>
+            <h3 data-i18n="cv_edu2_title">
+              Programador en Javascript (Centro profesional de azul)
+            </h3>
           </div>
         </article>
         <article>
           <p class="cv-time">03/2016 - 11/2022</p>
           <div class="cv-info">
-            <h3>Escuela Secundaria Mariano Moreno</h3>
+            <h3 data-i18n="cv_edu3_title">Escuela Secundaria Mariano Moreno</h3>
           </div>
         </article>
       </section>
 
-      <h2 id="contact" class="box-bg">Contactame a través de mis redes</h2>
+      <h2 id="contact" class="box-bg" data-i18n="contact_title">
+        Contactame a través de mis redes
+      </h2>
       <section class="contact-section box-bg">
         <p>
           <a href="https://www.linkedin.com/in/valentin-berger-dev/"
@@ -326,7 +364,8 @@
       </section>
     </main>
     <footer>
-      <p>©2026 Valentín Berger. Derechos reservados</p>
+      <p data-i18n="footer">©2026 Valentín Berger. Derechos reservados</p>
     </footer>
+    <button class="lang-btn" id="langBtn">EN</button>
   </body>
 </html>

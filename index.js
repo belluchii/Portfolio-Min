@@ -1,3 +1,4 @@
+let translations = {};
 let sections = document.querySelectorAll("main section");
 let nav_li = document.querySelectorAll("nav ul li");
 let nav_a = document.querySelectorAll("nav ul li a");
@@ -16,18 +17,93 @@ let projectCards = document.querySelectorAll(".project-card");
 let currentSlide = 0;
 let totalSlides = 0;
 
-// ---- Medir anchos mínimos de nav ----
-const min_widths = Array.from(nav_li).map((li) => {
-  let span = li.querySelector("a span");
-  span.style.display = "block";
-  li.style.transition = "0";
-  nav.style.display = "block";
-  let width = li.scrollWidth;
-  span.style.display = "";
-  nav.style.display = "";
-  li.style.transition = "";
-  return width;
+function measureMinWidths() {
+  return Array.from(nav_li).map((li) => {
+    const span = li.querySelector("a span");
+    const savedLiTransition = li.style.transition;
+    const savedLiWidth = li.style.width;
+    const savedSpanDisplay = span.style.display;
+    const savedNavDisplay = nav.style.display;
+
+    li.style.transition = "none";
+    li.style.width = "auto";
+    span.style.display = "block";
+    nav.style.display = "block";
+
+    const width = li.scrollWidth;
+
+    li.style.transition = savedLiTransition;
+    li.style.width = savedLiWidth;
+    span.style.display = savedSpanDisplay;
+    nav.style.display = savedNavDisplay;
+
+    return width;
+  });
+}
+
+let min_widths = measureMinWidths();
+
+let currentLang = "en";
+
+function updateCardGrid(lang) {
+  const langCap = lang.charAt(0).toUpperCase() + lang.slice(1);
+  document.querySelectorAll(".project-card").forEach((c) => {
+    const titleKey = `i18nTitle${langCap}`;
+    const tagsKey = `i18nTags${langCap}`;
+
+    const h3 = c.querySelector(".card-text h3");
+    if (h3 && c.dataset[titleKey]) h3.textContent = c.dataset[titleKey];
+
+    const tagsAttr = c.dataset[tagsKey];
+    if (tagsAttr) {
+      const container = c.querySelector(".tags");
+      if (container) {
+        container.innerHTML = "";
+        tagsAttr.split(",").forEach((tag) => {
+          const p = document.createElement("p");
+          p.textContent = tag.trim();
+          container.appendChild(p);
+        });
+      }
+    }
+  });
+}
+
+function setLanguage(lang) {
+  currentLang = lang;
+  document.documentElement.lang = lang;
+  const t = translations[lang];
+
+  document.querySelectorAll("[data-i18n]").forEach((el) => {
+    const key = el.dataset.i18n;
+    if (t[key] !== undefined) el.innerHTML = t[key];
+  });
+
+  updateCardGrid(lang);
+
+  requestAnimationFrame(() => {
+    min_widths = measureMinWidths();
+    if (window.scrollY === 0) {
+      for (let i = 0; i < nav_li.length; i++) {
+        nav_li[i].style.width = min_widths[i] + 3 + "px";
+      }
+    }
+  });
+
+  document.getElementById("langBtn").textContent = lang === "es" ? "ES" : "EN";
+}
+
+document.getElementById("langBtn").addEventListener("click", () => {
+  setLanguage(currentLang === "es" ? "en" : "es");
 });
+
+// ---- Cargar translations.json e inicializar idioma ----
+fetch("translations.json")
+  .then((r) => r.json())
+  .then((data) => {
+    translations = data;
+    setLanguage("en");
+  });
 
 // ---- Event listeners ----
 window.addEventListener("scroll", scroll_changes);
@@ -53,12 +129,11 @@ projectCards.forEach((c) => {
     preview.play();
     preview.style.opacity = "1";
   });
-
-  (c.addEventListener("click", () => cardFocusEffect(c)),
-    c.addEventListener("mouseleave", () => {
-      preview.pause();
-      preview.style.opacity = "0";
-    }));
+  c.addEventListener("mouseleave", () => {
+    preview.pause();
+    preview.style.opacity = "0";
+  });
+  c.addEventListener("click", () => cardFocusEffect(c));
 });
 
 projectCards.forEach((c) => {
@@ -111,8 +186,8 @@ function buildSwiper(slides) {
       video.autoplay = true;
       video.style.cssText =
         "width:100%;height:100%;object-fit:contain;display:block;";
-      div.appendChild(video);
       video.src = s.src;
+      div.appendChild(video);
       video.load();
       video.play().catch(() => {});
     }
@@ -139,15 +214,29 @@ function buildSwiper(slides) {
 // ---- Card focus ----
 
 function cardFocusEffect(c) {
-  const h3 = c.querySelector("h3");
-  focusTitle.textContent = h3 ? h3.textContent.trim() : "";
+  const langCap = currentLang.charAt(0).toUpperCase() + currentLang.slice(1);
+  const titleKey = `i18nTitle${langCap}`;
+  const tagsKey = `i18nTags${langCap}`;
+
+  focusTitle.textContent =
+    c.dataset[titleKey] ||
+    (c.querySelector("h3") ? c.querySelector("h3").textContent.trim() : "");
 
   cardTags.innerHTML = "";
-  c.querySelectorAll(".tags p").forEach((tag) => {
-    const p = document.createElement("p");
-    p.textContent = tag.textContent;
-    cardTags.appendChild(p);
-  });
+  const tagsAttr = c.dataset[tagsKey];
+  if (tagsAttr) {
+    tagsAttr.split(",").forEach((tag) => {
+      const p = document.createElement("p");
+      p.textContent = tag.trim();
+      cardTags.appendChild(p);
+    });
+  } else {
+    c.querySelectorAll(".tags p").forEach((tag) => {
+      const p = document.createElement("p");
+      p.textContent = tag.textContent;
+      cardTags.appendChild(p);
+    });
+  }
 
   cardLinks.innerHTML = "";
   c.querySelectorAll(".links a").forEach(({ textContent, href }) => {
@@ -167,9 +256,7 @@ function cardFocusEffect(c) {
       if (src.trim()) slides.push({ type: "image", src: src.trim() });
     });
   }
-  if (videoSrc) {
-    slides.push({ type: "video", src: videoSrc });
-  }
+  if (videoSrc) slides.push({ type: "video", src: videoSrc });
 
   buildSwiper(slides);
   cardCont.style.display = "flex";
@@ -224,7 +311,7 @@ function scroll_changes() {
       li.classList.add("li_scrolled");
       li.classList.remove("out_scrolled");
       li.style.width = li.scrollWidth + "px";
-      li.offsetWidth;
+      li.offsetWidth; // force reflow para disparar la transición
       li.style.width = "250px";
     }
     for (let h of h2s) h.classList.add("scrolled");
@@ -234,7 +321,7 @@ function scroll_changes() {
       const li = nav_li[i];
       li.classList.remove("li_scrolled");
       li.classList.add("out_scrolled");
-      li.offsetWidth;
+      li.offsetWidth; // force reflow
       li.style.width = min_widths[i] + 3 + "px";
     }
     for (let h of h2s) h.classList.remove("scrolled");
