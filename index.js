@@ -90,7 +90,8 @@ function setLanguage(lang) {
     }
   });
 
-  document.getElementById("langBtn").textContent = lang === "es" ? "ES" : "EN";
+  document.getElementById("langBtn").textContent =
+    lang === "es" ? "Idioma: Español" : "Language: English";
 }
 
 document.getElementById("langBtn").addEventListener("click", () => {

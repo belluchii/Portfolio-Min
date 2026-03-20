@@ -27,6 +27,7 @@ html {
 }
 
 body {
+  overflow-x: hidden;
   position: relative;
   height: 100%;
   display: flex;
@@ -572,8 +573,8 @@ footer p {
 
 /*---------------------lang-btn */
 .lang-btn {
-  position: fixed;
-  bottom: 24px;
+  position: absolute;
+  top: 24px;
   right: 24px;
   z-index: 1000;
   background: var(--bg-light);
@@ -730,19 +731,32 @@ li:nth-child(5) {
     margin: auto;
     width: 90%;
   }
-
   header {
-    width: 100%;
-    margin-top: 150px;
+    margin-top: 80px;
+    width: 90%;
+    min-height: unset;
   }
 
+  h1,
+  .header-text {
+    text-align: center;
+    font-size: 2rem;
+  }
   footer {
     width: 90%;
+  }
+  main > *,
+  main > section {
+    opacity: 1;
   }
 }
 
 @media (max-width: 450px) {
   header {
-    margin-top: 75px;
+    margin-top: 160px;
+  }
+  h1,
+  .header-text {
+    font-size: 1.5rem;
   }
 }
