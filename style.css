@@ -179,7 +179,7 @@ h2 {
   width: 90%;
   max-width: 580px;
   height: 620px;
-  border-radius: 6px;
+  border-radius: 3px;
   background: #0f0f11;
   border: 1px solid #222;
   box-shadow:
@@ -340,7 +340,7 @@ h2 {
 }
 
 .focus-tags {
-  margin-bottom: 8px;
+  margin-bottom: 5px;
 }
 
 .focus-tags p {
@@ -349,7 +349,6 @@ h2 {
   color: #ffffffaa;
   display: inline-block;
   margin-right: 6px;
-  margin-bottom: 4px;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   background: #ffffff0f;
